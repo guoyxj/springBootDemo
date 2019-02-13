@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" href="/js/iview/styles/iview.css">
+    <script src="/js/vue/vue.js"></script>
+    <script src="/js/iview/iview.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <i-button @click="show">Click me</i-button>
+
+        <Modal v-model="visible" title="dialog">Welcome to iview</Modal>
+    </div>
+</body>
+<script>
+new Vue({
+    el: '#app',
+    data: {
+        message: 'Welcome to SpringBoot application 2018-11-3000',
+        visible: false
+    },
+    methods:{
+        show: function () {
+            this.visible = true;
+        }
+    }
+});
+</script>
+</html>
