@@ -21,17 +21,22 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	jcenter()
+	//jcenter()
+	//使用阿里镜像
+		maven {url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+        mavenLocal()
+        mavenCentral()
 }
 
 
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
+	//implementation('org.springframework.boot:spring-boot-starter')//非web核心
 
 	//模板引擎
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	//compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
-	compile('com.google.guava:guava:24.0-jre')
+	//compile('com.google.guava:guava:24.0-jre')
 
 	//热部署相关（idea 手动ctrl + F9重新编译后立即更新）
 	compile('org.springframework.boot:spring-boot-devtools')
